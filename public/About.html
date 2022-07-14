@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Naresh It Technologies</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">        
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+       
+    </head>
+    <body>
+        <table class="table table-responsive border rounded rounded-3 border-primary border-1">
+            <thead>
+                <tr>
+                    <div class="panel bg-primary rounded" style="color:white; height: 35px;">
+                        <div class="panel-heading " ><center><font size="5px">Details</font></center></div>
+                    </div>
+                </tr>
+                <tr>
+                    <td>
+                        <table class="table table-responsive table-bordered" >
+                            <thead>
+                                <tr id="tr">
+                                    <td>ID</td>
+                                    <td>Course Name</td>
+                                    <td>Faculty Name</td>
+                                    <td>Duration</td>
+                                    <td>Timing</td>
+                                    <td>View</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Angular 8</td>
+                                    <td>Sudhakar sharma sir</td>
+                                    <td>45 days</td>
+                                    <td>07:30 AM</td>
+                                    <td>
+                                        <button class=" btn btn-warning btn-sm" data-bs-target="#details" data-bs-toggle="modal">view <span class="bi bi-eye"></span></button>
+                                    </td>
+                                    <!--..............Modal starts.........-->
+                                    <div class="modal fade " id="details">
+                                        <div class="modal-dialog modal-md rounded rounded-4">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h3>Details</h3>
+                                                    <button class="btn btn-close" data-bs-dismiss="modal"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="row">
+                                                        <div class="col-4 text-info">Course:</div>
+                                                        <div class="col-8 text-warning"> Angular</div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-4 text-info">Faculty:</div>
+                                                        <div class="col-8 text-warning">Sudhakar sharma sir</div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-4 text-info">Duration:</div>
+                                                        <div class="col-8 text-warning">45 days</div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-4 text-info">Timings:</div>
+                                                        <div class="col-8 text-warning">07:30 AM</div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-4 text-info">Description:</div>
+                                                        <div class="col-8 text-warning">Angular 8 is a client-side TypeScript based framework
+                                                             which is used to create dynamic web applications.
+                                                             It is very similar to its previous versions except having some extensive features.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button class="btn btn-warning" data-bs-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                    <!--........Modal ends..........-->
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Node Js</td>
+                                    <td>Samba sir</td>
+                                    <td>45 days</td>
+                                    <td>9:00 AM</td>
+                                    <td>
+                                        <button type="button" class="btn btn-warning btn-sm" data-bs-target="#details2" data-bs-toggle="modal">view <span class="bi bi-eye"></span></button>
+                                    </td>
+                                    <!--..............Modal starts.........-->
+                                    <div class="modal fade " id="details2">
+                                        <div class="modal-dialog modal-md    rounded rounded-4">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h3>Details</h3>
+                                                    <button class="btn btn-close" data-bs-dismiss="modal"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="row">
+                                                        <div class="col-4 text-info">Course:</div>
+                                                        <div class="col-8 text-warning">Node Js</div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-4 text-info">Faculty:</div>
+                                                        <div class="col-8 text-warning">Samba sir</div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-4 text-info">Duration:</div>
+                                                        <div class="col-8 text-warning">45 days</div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-4 text-info">Timings:</div>
+                                                        <div class="col-8 text-warning">9:00 AM</div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-4 text-info">Description:</div>
+                                                        <div class="col-8 text-warning">Node.js connects the ease of a scripting language (JavaScript) with the power of Unix network programming.
+                                                             Node.js was built on the Google V8 JavaScript engine since it was open-sourced under the BSD license.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button class="btn btn-warning"  data-bs-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                    <!--........Modal ends..........-->
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Java</td>
+                                    <td>Hari krishna sir</td>
+                                    <td>60 days</td>
+                                    <td>4:30 PM</td>
+                                    <td>
+                                        <button type="button" class="btn btn-warning btn-sm" data-bs-target="#details3" data-bs-toggle="modal">view <span class="bi bi-eye"></span></button>
+                                    </td>
+                                    <!--..............Modal starts.........-->
+                                    <div class="modal fade " id="details3">
+                                        <div class="modal-dialog modal-md    rounded rounded-4">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h3>Details</h3>
+                                                    <button class="btn btn-close" data-bs-dismiss="modal"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="row">
+                                                        <div class="col-4 text-info">Course:</div>
+                                                        <div class="col-8 text-warning">Java</div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-4 text-info">Faculty:</div>
+                                                        <div class="col-8 text-warning">Hari Krishna sir</div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-4 text-info">Duration:</div>
+                                                        <div class="col-8 text-warning">60 days</div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-4 text-info">Timings:</div>
+                                                        <div class="col-8 text-warning">4:30 PM</div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-4 text-info">Description:</div>
+                                                        <div class="col-8 text-warning">
+                                                            Java is an object-oriented programming language developed by Sun Microsystems, 
+                                                            and it was released in 1995. ... Java Virtual Machine (JVM) executes Java code,
+                                                             but it has been written in platform-specific languages such as C/C++/ASM, etc.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button class="btn btn-warning" data-bs-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                    <!--........Modal ends..........-->
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </thead>
+        </table>
+        <br><br>
+        
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+        
+    </body>
+</html>

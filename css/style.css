@@ -1,0 +1,57 @@
+#body,form{ margin-left:15px;
+    margin-right:15px;
+    box-shadow: 1px 5px 8px 10px #333;}
+#section1{background-color: rgba(128, 128, 255,0.66);
+        height:fit-content; display:flex; max-width: fit-content;}
+#section2{ background-color: rgba(153, 153, 102, 0.66);}
+.w-25{ justify-items: end;}
+#image:hover {
+    -ms-transform: scale(1.2); 
+    -webkit-transform: scale(1.2); 
+    transform: scale(1.2); 
+
+}
+@media (max-width: 600px)
+{   
+    .w-100{height: 250px;}
+    #table-container{ display: grid; grid-template-columns: 1fr;}
+    #table{ grid-row: 1;}
+    section{ height: auto;}
+    #footer{display: flex; flex-wrap: wrap; flex-direction: column;}
+    #contact-container{display: grid; grid-template-rows: 2;}
+    #contact-div1{grid-row: 1; align-items: center; justify-content: center; align-content: center;}
+    #contact-div2{grid-row: 2; align-items: center; justify-content: center;  align-content: center;}
+    #contact-img{ height: 200px;}
+    
+}
+#div2{display: flex; flex-direction: row; flex-wrap:wrap;  justify-content: center; align-items: center;}
+form div{ margin-top: 10px;}
+form label{ margin-top: 15px;}
+#img-div{ padding:20px 0px 0px 250px;}
+@media screen and ( orientation:portrait)
+{ #div2{ display: flex; flex-direction: column; flex-wrap: nowrap;
+    justify-content: center; align-items: center;}
+    form{ margin-left: 30px; width: auto;}
+    #img-div{ padding:50px 0px 0px 40px}
+   
+}
+
+  #tr{
+    background-color:#c2c2a3;
+}
+footer{
+    background-color: #333;
+    color:white;
+    text-shadow :2px 1px 3px white ;
+    padding: 20px;
+    
+
+}
+footer a{ color:white}
+a{
+    text-decoration: none;
+
+}
+.dropdown-menu:hover{ background-color: beige;}
+
+ 

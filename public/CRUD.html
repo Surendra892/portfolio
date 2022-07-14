@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD operations</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(function(){
+            function LoadProducts(){
+                $.ajax({
+                    method:"GET",
+                    url:"http://127.0.0.1:5050/products",
+                    success:(data)=>{
+                        $.each(data,(key,value)=>{
+                            $(`
+                                <tr>
+                                    <td>${value.Productid}</td>
+                                    <td>${value.Name}</td>
+                                    <td>${value.Price}</td>
+                                    <td>${(value.Stock==true)?"Available":"Out Of Stock"}</td>
+                                    <td>${value.Category}</td>
+                                    <td>${value.Rating}</td>
+                                    <td>
+                                        <button class="btn btn-info" id="btnEdit" onclick="GetId(${value.Productid})"  data-bs-target="#EditProductDetails" data-bs-toggle="modal"><span class="bi bi-pen-fill"></span></button>
+                                        <button class="btn btn-danger" onclick="DeleteClick(${value.Productid})" id="btnDelete"><span class="bi bi-trash"></span></button>
+                                    </td>
+                                </tr>
+                            `).appendTo("tbody");
+                            
+                        })
+                    }
+                });
+                
+                
+            };
+
+           
+           function LoadCategories(){
+                $.ajax({
+                    method:"GET",
+                    url:"http://127.0.0.1:5050/categories",
+                    success:function(data){
+                        data.unshift({Category:-1,Category:"Select a Category"})
+                        $.each(data,function(key,val){
+                            $(`
+                                <option>${val.Category}</option>
+                            `).appendTo("#Category")
+                        })
+                    }
+                })
+           };
+
+            LoadCategories();
+            LoadProducts();
+            //Add Product
+            $("#btnAdd").click(()=>{
+                if($("#Name").val()=="" || $("#Price").val()=="")
+                {
+                    $("#AlertTxt").html("Fill the required Fields").css("color","red");                                
+                }else{
+                    $("#AlertTxt").html("");
+                    var formdata = {
+                    Productid : $("#Productid").val(),
+                    Name : $("#Name").val(),
+                    Price: $("#Price").val(),
+                    Stock : $("#Stock").prop("checked"),
+                    Category : $("#Category").val(),
+                    Rating : $("#Rating").val()
+                    };
+
+                    $.ajax({
+                        method:"POST",
+                        url:"http://localhost:5050/addproduct",
+                        data: formdata
+                    });
+                        alert("Product added");
+                        location.reload();
+                }   
+                
+            })
+             // Update Product
+            $("#update").click(()=>{
+                var confirmation = confirm("Update Data ");
+                if(confirmation == true){
+                    var EditedData = {
+                        Productid : $("#EditProductid").val(),
+                        Name      : $("#EditName").val(),
+                        Price     : $("#EditPrice").val(),
+                        Stock     : $("#EditStock").prop("checked"),
+                        Category  : $("#EditCategory").val(),
+                        Rating    : $("#EditRating").val(),
+                    };
+                    $.ajax({
+                        method : "PATCH",
+                        url    : `http://localhost:5050/updatedata/${EditedData.Productid}`,
+                        data   : EditedData
+                    });
+                    location.reload();
+                }
+            });
+            
+            $("#Price").blur(()=>{
+                if($("#Name").val()!="" && $("#Price").val()!="")
+                {
+                    $("#AlertTxt").html("");                              
+                }
+            });
+
+           
+                
+              
+           
+
+         
+        });
+
+        function GetId(id) {
+                $.ajax({
+                    method : "GET",
+                    url    : `http://localhost:5050/product/${id}`,
+                    success:(data)=>{
+                        for(var item of data){
+                            $("#EditProductid").val(item.Productid);
+                            $("#EditName").val(item.Name);
+                            $("#EditPrice").val(item.Price);
+                            $("#EditCategory").val(item.Category);
+                            $("#EditStock").prop((item.Stock=="true")?true:false);
+                            $("#EditRating").val(item.Rating);
+                        }
+                    }
+                })
+        };
+        
+         //Delete Product
+        function DeleteClick(id){
+           
+            var confirmation = confirm(`Are You Sure to Delete this Product`);
+            if(confirmation == true)
+            {
+                 
+            $.ajax({
+                method : "DELETE",
+                url    : `http://localhost:5050/deleteproduct/${id}`,
+                data   : id,
+            })
+            alert("Product Deleted")
+            location.reload();
+
+            }
+        }; 
+        
+    </script>
+    <style type="text/css">
+        @media screen and (max-width:680px){
+            
+            header,#table,#table-2{
+                width: auto;
+            }
+        }
+    </style>
+</head>
+<body class="container-fluid">
+    <header class="bg-danger text-white text-center p-2 mt-1">
+        <h2>Product CRUD Operations</h2>
+    </header>
+    <div class="row m-2" >
+        <div class="col-3" id="table">
+            <div>
+                <dl>
+                    <dt>Product Id</dt>
+                    <dd><input type="number" id="Productid" class="form-control"></dd>
+                    <dt>Name</dt>
+                    <dd><input type="text" id="Name" class="form-control"></dd>
+                    <dt>Price</dt>
+                    <dd><input type="number" id="Price" class="form-control"></dd>
+                    <dt>Stock</dt>
+                    <dd class="form-switch"><input type="checkbox" id="Stock" class="form-check-input"></dd>
+                    <dt>Category</dt>
+                    <dd>
+                        <select id="Category" class="form-control">
+    
+                        </select>
+                    </dd>
+                    <dt>Rating</dt>
+                    <dd><input type="number" id="Rating" class="form-control"></dd>
+                    <div id="AlertTxt"></div>
+                    <button id="btnAdd" class="btn btn-primary w-100">Add Product</button>
+                </dl>
+            </div>
+        </div>
+        <div class="col-9">
+            <table class="table table-hover" id=table-2>
+                <thead>
+                    <tr>
+                        <th>Productid</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Stock</th>
+                        <th>Category</th>
+                        <th>Rating</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    
+    <!--.................Modal....................-->
+    <div class="modal fade" id="EditProductDetails">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Edit Products Details</h3>
+                    <button data-bs-dismiss="modal" class="btn btn-close"></button>
+                </div>
+                <div class="modal-body">
+                    <dl>
+                        <dt>ProductId</dt>
+                        <dd><input type="number" class="form-control" id="EditProductid" readonly></dd>
+                        <dt>Name</dt>
+                        <dd><input type="text" class="form-control" id="EditName"></dd>
+                        <dt>Price</dt>
+                        <dd><input type="text" class="form-control" id="EditPrice"></dd>
+                        <dt>Category</dt>
+                        <dd><input type="text" class="form-control" id="EditCategory" ></dd>
+                        <dt>Stock</dt>
+                        <dd><input type="checkbox" class="form-check-input" id="EditStock"></dd>
+                        <dt>Rating</dt>
+                        <dd><input type="number" min="1" max="5" step="0.1" id="EditRating" class="form-control"></dd>
+                    </dl>
+                </div>
+                <div class="modal-footer">
+                    <button id="update" class="btn btn-primary">Submit</button>
+                    <button class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h5 class="text-center mt-3"><a href="../index.html"> Back to Home</a></h5>
+
+</body> 
+</html>
