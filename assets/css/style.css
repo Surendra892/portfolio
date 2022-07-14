@@ -217,7 +217,7 @@ h1, h2, h3, h4, h5, h6 {
   min-width: 300px;
 }
 #hero h1 {
-  margin: 0 0 10px 550px;
+  margin: 0 0 10px 0;
   font-size: 64px;
   font-weight: 700;
   line-height: 56px;
@@ -226,7 +226,6 @@ h1, h2, h3, h4, h5, h6 {
 #hero p {
   color: #fff;
   margin-bottom: 50px;
-  margin-left: 550px;
   font-size: 26px;
   font-family: "Poppins", sans-serif;
 }
@@ -240,29 +239,16 @@ h1, h2, h3, h4, h5, h6 {
   #hero {
     background-attachment: fixed;
   }
- 
 }
 @media (max-width: 768px) {
   #hero h1 {
     font-size: 28px;
     line-height: 36px;
-    margin: 0 0 10px 300px;
   }
   #hero h2 {
     font-size: 18px;
     line-height: 24px;
     margin-bottom: 30px;
-  }
-  #hero p{
-    margin-left: 300px;
-  }
-}
-@media screen and (max-width:550px){
-  #hero h1 {
-    margin: 0 0 10px 250px;
-  }
-  #hero p{
-    margin-left: 250px;
   }
 }
 
