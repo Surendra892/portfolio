@@ -11,21 +11,28 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
         <script type="text/javascript" src="../assets/js/fewmore.js"></script>
         <style type="text/css">
+            body{display: grid;gap:0.2em;grid-template-columns: repeat(2,6fr);}
             fieldset{
                 box-shadow: -2px -2px 2px gray;
                 margin-top: 2rem;
+                padding-left: 0.3em;
             }
             legend{
                 background-color: rgb(234, 241, 241);
                 width: auto;
                 box-shadow: 2px 2px 2px gray;
                 border-radius: 0.5em;
-                margin: 0.3em 0 0.3em 0;
+                margin: 0.3em 0 0.4em 0;
             }
-            img{
-                width:fit-content;
-                height: 280px;
-            }
+
+            #greeting{grid-column: span 2;grid-row: 1;}
+            #cascade{grid-column: 1; grid-row: 2;}
+            #dynimg{grid-column: 2; grid-row: 2; width: fit-content;height: 280px; margin-top:1.3em;}
+            #mouseevent{grid-column:1;grid-row:3;} 
+            #titlecase{grid-column:2;grid-row:3;}
+            #emi{grid-column: span 2;grid-row:4;}
+            h5{grid-column: span 2;grid-row:5;}
+            
             #emiinput{
                 display:flex;                 
             }
@@ -52,12 +59,14 @@
                 background-color: green;
             }
             @media screen and (orientation:portrait){
-                body{display: grid;grid-template-columns: 12fr;gap: 0.2em;}
+                body{display: grid;grid-template-columns:1fr;}
                 #greeting{grid-column: 1;grid-row: 1;}
                 #cascade{grid-column: 1; grid-row: 2;}
                 #dynimg{grid-column: 1; grid-row: 3; width: fit-content;}
                 #mouseevent{grid-column:1;grid-row:4;} 
-                #emi{grid-column:1;grid-row:6;}           
+                #titlecase{grid-column: 1;grid-row: 5;}
+                #emi{grid-column:1;grid-row:6;}
+                h5{grid-column: 1;grid-row: 7;}          
             }
         </style>
     </head>
