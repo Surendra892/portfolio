@@ -191,7 +191,7 @@ $(function(){
             }
             function LoadSalute(){
                 var username = prompt("Enter Name");
-                if(username==null){
+                if(username==undefined){
                     var now = new Date();
                     var hrs = now.getHours();
                     if(hrs>12){
@@ -207,7 +207,7 @@ $(function(){
                 } else {
                     var now = new Date();
                     var hrs = now.getHours();
-                    if(hrs>12){
+                    if(hrs<12){
                         document.getElementById("icon").className="bi bi-brightness-high";
                         document.getElementById("salute").innerHTML=`Hello! ${username} Good Morning`;
                     } else if( hrs>=12 && hrs<=17) {
