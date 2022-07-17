@@ -194,7 +194,7 @@ $(function(){
                 if(username==undefined){
                     var now = new Date();
                     var hrs = now.getHours();
-                    if(hrs>12){
+                    if(hrs<12){
                         document.getElementById("icon").className="bi bi-brightness-high";
                         document.getElementById("salute").innerHTML=`Hello! Good Morning`;
                     } else if( hrs>12 && hrs<=17) {
