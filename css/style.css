@@ -21,7 +21,7 @@
     #contact-container{display: grid; grid-template-rows: 2;}
     #contact-div1{grid-row: 1; align-items: center; justify-content: center; align-content: center;}
     #contact-div2{grid-row: 2; align-items: center; justify-content: center;  align-content: center;}
-    #contact-img{ height: 200px;}
+    #contact-img{ height: 200px;} 
     
 }
 #div2{display: flex; flex-direction: row; flex-wrap:wrap;  justify-content: center; align-items: center;}

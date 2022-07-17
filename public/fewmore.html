@@ -23,13 +23,13 @@
                 margin: 0.3em 0 0.3em 0;
             }
             img{
-                width: 30%;
+                width:fit-content;
                 height: 280px;
             }
             #emiinput{
                 display:flex;                 
             }
-            #emiinput .w-25,.range-input{
+            #emiinput .w-25{
                 margin-left: 3rem;
             }
             #container{
@@ -52,16 +52,12 @@
                 background-color: green;
             }
             @media screen and (orientation:portrait){
-            
-                body{display: grid;grid-template-columns: 12fr;}
-                #greeting{grid-row: 1;}
-                #cascade{grid-row: 2;}
-                #mouseevent{grid-row:3;}
-                img{height: 250px; width: 70%;}
-                #titlecase{grid-row: 4;}
-                #emi{grid-row: 5;}
-                #emiinput{display:grid;}
-                            
+                body{display: grid;grid-template-columns: 12fr;gap: 0.2em;}
+                #greeting{grid-column: 1;grid-row: 1;}
+                #cascade{grid-column: 1; grid-row: 2;}
+                #dynimg{grid-column: 1; grid-row: 3; width: fit-content;}
+                #mouseevent{grid-column:1;grid-row:4;} 
+                #emi{grid-column:1;grid-row:6;}           
             }
         </style>
     </head>
@@ -98,9 +94,10 @@
                         </div>
                     </div> 
                 </div>
-                <img id="dynimg" >
+                
             </div>           
         </fieldset>
+        <img id="dynimg" >
         
         <div class="col" id="mouseevent">
             <h4 class="row ms-5 mt-2">Mouse Event</h4>
@@ -112,39 +109,37 @@
             <h4 id="msg" class="row-2" style="margin-left:80px;"></h4>
         </div>
           
-        <fieldset id="titlecae">
+        <fieldset id="titlecase">
             <legend>Title Case onblur</legend>
-            <input class="form-control w-25" placeholder="Enter Your Text" type="textarea" id="Txt">
+            <input class="form-control w-50" placeholder="Enter Your Text" type="textarea" id="Txt">
         </fieldset>
 
         <fieldset id="emi">
             <legend>Personal Loan  Calculator</legend>
             <div id="emiinput">
-                <div class=" input-group w-25">
-                    <span class="input-group-text">Amount You Need:</span>
-                    <input type="text" id="txtAmount" class="form-control"  required>
+                <div class="p-1"> 
+                    <div>
+                        <input type="text" id="txtAmount" placeholder="Amount You Need" class="form-control"  required>
+                    </div>
+                    <div>
+                        50,000/-<input value="50000"  id="rangeAmount" min="50000" max="1000000" type="range">10,00,000/-
+                    </div>
                 </div>
-                <div class=" input-group w-25 " >
-                    <span class="input-group-text">for</span>
-                    <input type="text" id="txtYear" class="form-control" required>
-                    <span class="input-group-text">years</span>
+                <div class="p-1">
+                    <div>
+                        <input type="text" id="txtYear" placeholder="Years" class="form-control" required>
+                        </div>
+                    <div>
+                        3 <input value="3" id="rangeYear" min="3" max="6" type="range">6
+                    </div>
                 </div>
-                <div class=" input-group w-25" >
-                    <span class="input-group-text">interest</span>
-                    <input type="text" id="txtRate" class="form-control" required>
-                    <span class="input-group-text">%</span>
-                </div>
-            </div>
-
-            <div class="row mt-2">
-                <div class="col input-group range-input" >
-                    50,000/-<input value="50000"  id="rangeAmount" min="50000" max="1000000" type="range">10,00,000/-
-                </div>
-                <div class="col input-group range-iput">
-                    3 <input value="3" id="rangeYear" min="3" max="6" type="range">6
-                </div>
-                <div class="col input-group range-input">
-                    8%<input value="8"  id="rangeRate" min="8" max="16" step="0.1" type="range">16%
+                <div class="p-1">
+                    <div>
+                        <input type="text" id="txtRate" placeholder="intreset rate" class="form-control" required>
+                    </div>
+                    <div >
+                        8%<input value="8"  id="rangeRate" min="8" max="16" step="0.1" type="range">16%
+                    </div>
                 </div>
             </div>
 
