@@ -256,13 +256,13 @@ $(function(){
 
         /**---------------EMI Calculator  Starts-------------------------*/
 
-            $("#rangeAmount").on("click",()=>{
+            $("#rangeAmount").on("change",()=>{
                 document.getElementById("txtAmount").value=document.getElementById("rangeAmount").value;
             });
-            $("#rangeYear").on("click",()=>{
+            $("#rangeYear").on("change",()=>{
                 document.getElementById("txtYear").value=document.getElementById("rangeYear").value;
             });
-            $("#rangeRate").on("click",()=>{
+            $("#rangeRate").on("change",()=>{
                 document.getElementById("txtRate").value= document.getElementById("rangeRate").value;
             });
             $("#CalculateEmi").on("click",()=>{
