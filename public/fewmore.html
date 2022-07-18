@@ -19,7 +19,6 @@
             }
             legend{
                 background-color: rgb(234, 241, 241);
-                width: auto;
                 box-shadow: 2px 2px 2px gray;
                 border-radius: 0.5em;
                 margin: 0.3em 0 0.4em 0;
@@ -27,9 +26,9 @@
             body{display: grid;gap:0.2em;grid-template-columns: repeat(2,6fr);}
             #greeting{grid-column: span 2;grid-row: 1;}
             #cascade{grid-column: 1; grid-row: 2;}
-            #dynimg{grid-column: 2; grid-row: 2; width: fit-content;height: 280px; margin-top:2em;}
+            #dynimg{grid-column: 2; grid-row: 2; width: fit-content;height: 280px; margin:2rem 0 0 0.8em;}
             #mouseevent{grid-column:1;grid-row:3;} 
-            #titlecase{grid-column:2;grid-row:3;}
+            #titlecase{display: grid;}
             #emi{grid-column: span 2;grid-row:4;}
             h5{grid-column: span 2;grid-row:5;}
             
@@ -106,7 +105,7 @@
                 
             </div>           
         </fieldset>
-        <img id="dynimg" >
+        <img id="dynimg" title="dynamic iamges from Cascading Dropdown">
         
         <div class="col" id="mouseevent">
             <h4 class="row ms-5 mt-2">Mouse Event</h4>
@@ -119,9 +118,12 @@
         </div>
           
         <fieldset id="titlecase">
-            <legend>Title Case onblur</legend>
-            <input class="form-control w-50" placeholder="Enter Your Text" type="textarea" id="Txt">
-        </fieldset>
+            <legend>Title Case </legend>
+            <div class="d-flex flex-wrap">
+                <input class="form-control w-50" placeholder="Enter Your Text" type="textarea" id="Txt">
+                <div id="TitleCase-Para" class="ms-1"></div>
+            </div>
+            </fieldset>
 
         <fieldset id="emi">
             <legend>Personal Loan  Calculator</legend>

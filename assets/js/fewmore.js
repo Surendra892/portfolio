@@ -241,6 +241,16 @@ $(function(){
                 document.getElementById("Txt").value=String;
             };
         });
+        $("#Txt").on("keyup",()=>{
+            var str=document.getElementById("Txt").value;
+            var arrStr=str.split(" ");
+            var String=""
+            for( var i=0;i<arrStr.length;i++)
+            {
+                String += arrStr[i].charAt(0).toUpperCase() + arrStr[i].substring(1).toLowerCase() + " ";
+                $("#TitleCase-Para").html(String);
+            };
+        });
         /**---------------TitleCase  End-------------------------*/
 
 
