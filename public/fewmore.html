@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=0.9">
         <title>Few More</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
@@ -24,7 +24,7 @@
                 margin: 0.3em 0 0.4em 0;
             }
             body{display: grid;gap:0.2em;grid-template-columns: repeat(2,6fr);}
-            #greeting{grid-column: span 2;grid-row: 1;}
+            #greeting{grid-column: span 2;grid-row: 1; justify-content: space-between;}
             #cascade{grid-column: 1; grid-row: 2;}
             #dynimg{grid-column: 2; grid-row: 2; width: fit-content;height: 280px; margin:2rem 0 0 0.8em;}
             #mouseevent{grid-column:1;grid-row:3;} 
@@ -59,7 +59,8 @@
             }
             @media screen and (orientation:portrait){
                 body{display: grid;grid-template-columns:1fr;}
-                #greeting{grid-column: 1;grid-row: 1;}
+                #greeting{grid-column: 1;grid-row: 1; }
+                #greeting>div{transform: scale(0.9);}
                 #cascade{grid-column: 1; grid-row: 2;}
                 #dynimg{grid-column: 1; grid-row: 3; width: fit-content;}
                 #mouseevent{grid-column:1;grid-row:4;} 
@@ -71,7 +72,7 @@
     </head>
     <body class="container-fluid"> 
 
-        <div class="btn-toolbar justify-content-between bg-dark text-white  rounded-3 p-1 mt-1" id="greeting" style="height:35px;">
+        <div class="btn-toolbar  bg-dark text-white  rounded-3 p-1 mt-1" id="greeting" style="height:35px;">
             <div class="btn-group">
                 <div id="time"></div>
             </div>

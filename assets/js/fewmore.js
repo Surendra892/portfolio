@@ -222,7 +222,7 @@ $(function(){
             }
             function LoadDate(){
                 var now = new Date();
-                document.getElementById("date").innerHTML=`${weekday[now.getDay()]} ${now.getDate()}- ${months[now.getMonth()]}-${now.getFullYear()}`;
+                document.getElementById("date").innerHTML=` ${now.getDate()}- ${months[now.getMonth()]}-${now.getFullYear()}`;
 
             };
             setInterval(LoadTime,1000);
