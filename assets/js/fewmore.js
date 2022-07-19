@@ -32,6 +32,8 @@ $(function(){
     };
 
     function LoadsubCategories(){
+        $("#dynimg").attr("src","")
+        $("#dropdown3").html("");
         $("#dropdown2").html("");
         for(items of subcategories)
         {
@@ -43,6 +45,7 @@ $(function(){
     };
 
    function LoadProducts(){
+        $("#dynimg").attr("src","")
         $("#dropdown3").html("");
         for(items of products)
         {
