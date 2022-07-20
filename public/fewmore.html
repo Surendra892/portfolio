@@ -27,7 +27,7 @@
             #greeting{grid-column: span 2;grid-row: 1; justify-content: space-between;}
             #cascade{grid-column: 1; grid-row: 2;}
             #dynimg{grid-column: 2; grid-row: 2; width: fit-content;height: 280px; margin:2rem 0 0 0.8em;}
-            #mouseevent{grid-column:1;grid-row:3;} 
+            #mouseevent{grid-column:1;grid-row:3;  margin-top:2rem} 
             #titlecase{display: grid;}
             #emi{grid-column: span 2;grid-row:4;}
             h5{grid-column: span 2;grid-row:5;}
@@ -56,6 +56,9 @@
             }
             #green{
                 background-color: green;
+            }
+            @media screen and (max-width:500px) {
+                #greeting{justify-content: space-between;}
             }
             @media screen and (orientation:portrait){
                 body{display: grid;grid-template-columns:1fr;}
