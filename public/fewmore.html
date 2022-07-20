@@ -16,6 +16,7 @@
                 box-shadow: -2px -2px 2px gray;
                 margin-top: 2rem;
                 padding-left: 0.3em;
+                max-width: auto;
             }
             legend{
                 background-color: rgb(234, 241, 241);
@@ -57,9 +58,10 @@
             #green{
                 background-color: green;
             }
-            @media screen and (max-width:300px){
+            @media screen and (max-width:500px){
                 #greeting> div{transform: scale(0.9); justify-content: flex-start;}
                 #date,#icon,#salute,#time{transform: scale(0.9);}
+                #emiinput div{transform: scale(0.9);}
             }
             @media screen and (orientation:portrait){
                 body{display: grid;grid-template-columns:1fr;}
