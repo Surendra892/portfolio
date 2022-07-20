@@ -58,10 +58,11 @@
             #green{
                 background-color: green;
             }
-            @media screen and (max-width:500px){
+            @media screen and (max-width:4500px){
                 #greeting> div{transform: scale(0.9); justify-content: flex-start;}
                 #date,#icon,#salute,#time{transform: scale(0.9);}
-                #emiinput div{transform: scale(0.9);}
+                #emiinput{margin-left: -15px;}
+                #emiinput div{transform: scale(0.9); }
             }
             @media screen and (orientation:portrait){
                 body{display: grid;grid-template-columns:1fr;}
