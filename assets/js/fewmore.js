@@ -26,7 +26,8 @@ $(function(){
         "../Images/redmi.png","../Images/oneplus.webp","../Images/dell.jpg","../Images/hp.jpg",
         "../Images/acer.jpg","../Images/macbook.jpg","../Images/jeans.jpg","../Images/suite.webp",
         "../Images/shirts.jpg","https://99designs-blog.imgix.net/blog/wp-content/uploads/2017/11/Tshirt-design.jpg?auto=format&q=60&w=2060&h=1158.75&fit=crop&crop=faces",
-        "../Images/saries.jpg","../Images/chudidhar.jpg","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRpwNX_z7pwOn5KIwSoxI2dL1g4K7hVSSRtg&usqp=CAU"
+        "../Images/saries.jpg","https://content3.jdmagicbox.com/comp/chennai/u2/044pxx44.xx44.150211152923.c4u2/catalogue/garden-chudidhar-park-chennai-7srojzdfvg.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRpwNX_z7pwOn5KIwSoxI2dL1g4K7hVSSRtg&usqp=CAU"
     ];
 
     function LoadCategories(){
