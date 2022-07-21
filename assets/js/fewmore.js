@@ -19,7 +19,15 @@ $(function(){
    
     var subcategories = [];
     var products = [];
-    var productimg = ["../Images/leeboot.jpg","../Images/nikecasuals.webp","../Images/levis.webp","../Images/paragon.jpg","../Images/sparks.webp","../Images/woodland.webp","../Images/samsung.webp","../Images/realme fone.webp","../Images/redmi.png","../Images/oneplus.webp","../Images/dell.jpg","../Images/hp.jpg","../Images/acer.jpg","../Images/macbook.jpg","../Images/jeans.jpg","../Images/suite.webp","../Images/shirts.jpg","../Images/tshirts.jpg","../Images/saries.jpg","../Images/chudidhar.jpg","../Images/panjabi.jpg"]
+    var productimg = [
+        "../Images/leeboot.jpg","../Images/nikecasuals.webp",
+        "../Images/levis.webp","../Images/paragon.jpg","../Images/sparks.webp",
+        "../Images/woodland.webp","../Images/samsung.webp","../Images/realme fone.webp",
+        "../Images/redmi.png","../Images/oneplus.webp","../Images/dell.jpg","../Images/hp.jpg",
+        "../Images/acer.jpg","../Images/macbook.jpg","../Images/jeans.jpg","../Images/suite.webp",
+        "../Images/shirts.jpg","https://99designs-blog.imgix.net/blog/wp-content/uploads/2017/11/Tshirt-design.jpg?auto=format&q=60&w=2060&h=1158.75&fit=crop&crop=faces",
+        "../Images/saries.jpg","../Images/chudidhar.jpg","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRpwNX_z7pwOn5KIwSoxI2dL1g4K7hVSSRtg&usqp=CAU"
+    ];
 
     function LoadCategories(){
         for(var items of categories)
