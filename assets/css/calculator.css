@@ -1,7 +1,7 @@
-  body {
-            display: flex;
+          .container-fluid{
+            display: grid;
             justify-content: center;
-            align-items: center;
+            align-content: center;
             min-height: 100vh;
             background: linear-gradient(to left, rgb(216, 171, 67), rgb(92, 204, 227));
         }
