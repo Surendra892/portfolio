@@ -29,7 +29,10 @@ body>div{
     padding:10%;
 }
 @media screen and (orientation:portrait){
-    body>div{margin: -65px; scale:.75 ;}
+    body{
+        display: flex;
+        flex-wrap: wrap;
+    }
   
 }
     
