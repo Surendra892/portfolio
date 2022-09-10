@@ -3,17 +3,46 @@
     font-family: Georgia, 'Times New Roman', Times,sans-serif;
 }
 
+
 body{
     background: linear-gradient(to right, hsl(180, 100%, 50%), hsl(160,
-        100%,
-        50%));
-        display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            overflow: hidden;
-            font-size: 1.5rem;
-        
+    100%,
+    50%));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    font-size: 1.5rem;
+
+}
+#displayTime:hover{
+    background-color: rgba(61, 52, 52,.95);
+    color:hsl(172, 37%, 88%) ;
+}
+.clock:hover{
+    background-color: black;
+    color: azure;
+    
+}
+body>div{
+    padding:10%;
+}
+@media screen and (orientation:portrait){
+    body>div{margin: -65px; scale:.75 ;}
+  
+}
+    
+#displayTime {
+    
+    width: max-content;
+    padding: 10px;
+    
+    background-color: rgb(238, 219, 190);
+    color: blue;
+    letter-spacing: 1px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 1rem;
 }
 h2{
     transform: translate(10%);
@@ -26,6 +55,7 @@ h2{
     border-radius: 50%;
     border: 3px solid black;
     position: relative;
+    box-shadow: 1px 1px 4px 4px  ;
 }
 
 .number{
@@ -42,7 +72,7 @@ h2{
     position: absolute;
     width: 5px;
     height: 5px;
-    background-color: black;
+    background-color: rgb(7, 7, 7);
     border-radius: 50%;
     left: 50%;
     
@@ -89,7 +119,7 @@ h2{
 .hour {
     width: 7px;
     height: 23%;
-    background-color:black;
+    background-color:rgb(110, 30, 30);
     z-index:10;
 }
 
@@ -102,6 +132,6 @@ h2{
     transform: translate(-50%,50%);
     width: 13px;
     height:13px;
-    background-color: black;
+    background-color: rgb(58, 36, 95);
     border-radius: 50%;
 }

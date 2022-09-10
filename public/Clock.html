@@ -5,14 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link type="text/css" rel="stylesheet" href="../assets/css/analog clock.css">
-    <script type="text/javascript" src="../assets/js/analog.js" defer></script>
-    <title>Analog Clock</title>
+    <title>Time</title>
+    <link rel="stylesheet" href="../assets/css/time.css">
+    <script src="../assets/js/clock.js"></script>
 </head>
 
-<body>
+<body onload="bodyload()">
     <div>
-        <h2>Analog Clock</h2>
+        <div id="displayTime"></div>
+    </div>
+    <div>
         <div class="clock">
             <div class="hand hour" data-hour-hand></div>
             <div class="hand minute" data-minute-hand></div>
@@ -31,6 +33,7 @@
             <div class="number number12">12</div>
         </div>
     </div>
+
 </body>
 
 </html>
