@@ -80,9 +80,11 @@
                             method: "POST",
                             url: "http://localhost:5050/addproduct",
                             data: formdata
-                        });
-                        alert("Product added");
-                        location.reload();
+                        }).then(() => {
+                            alert("Product added");
+                            location.reload();
+                        })
+
                     } else {
                         $("#AlertTxt").html("Fill the required Fields").css("color", "red");
                     }
