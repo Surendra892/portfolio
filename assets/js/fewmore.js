@@ -271,18 +271,12 @@ $(function () {
 
   /**---------------TitleCase  Starts-------------------------*/
   $("#Txt").on("blur", () => {
-    var str = document.getElementById("Txt").value;
-    var arrStr = str.split(" ");
-    var String = "";
-    for (var i = 0; i < arrStr.length; i++) {
-      String +=
-        arrStr[i].charAt(0).toUpperCase() +
-        arrStr[i].substring(1).toLowerCase() +
-        " ";
-      document.getElementById("Txt").value = String;
-    }
+    document.getElementById("Txt").value = titleCase();
   });
   $("#Txt").on("keyup", () => {
+    titleCase();
+  });
+  function titleCase() {
     var str = document.getElementById("Txt").value;
     var arrStr = str.split(" ");
     var String = "";
@@ -292,8 +286,9 @@ $(function () {
         arrStr[i].substring(1).toLowerCase() +
         " ";
       $("#TitleCase-Para").html(String);
+      return String;
     }
-  });
+  }
   /**---------------TitleCase  End-------------------------*/
 
   /**---------------EMI Calculator  Starts-------------------------*/
