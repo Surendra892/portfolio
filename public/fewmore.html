@@ -1,178 +1,277 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=0.7">
-        <title>Few More</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="../assets/js/fewmore.js"></script>
-        <style type="text/css">
-            
-            fieldset{
-                box-shadow: -2px -2px 2px gray;
-                margin-top: 2rem;
-                padding-left: 0.3em;
-                max-width: auto;
-            }
-            legend{
-                background-color: rgb(234, 241, 241);
-                box-shadow: 2px 2px 2px gray;
-                border-radius: 0.5em;
-                margin: 0.3em 0 0.4em 0;
-            }
-            body{display: grid;gap:0.2em;grid-template-columns: repeat(2,6fr);}
-            #greeting{grid-column: span 2;grid-row: 1; justify-content: space-between;}
-            #cascade{grid-column: 1; grid-row: 2;}
-            #dynimg{grid-column: 2; grid-row: 2; width: fit-content;height: 280px; margin:2rem 0 0 0.8em;}
-            #mouseevent{grid-column:1;grid-row:3;  margin-top:2rem} 
-            #titlecase{display: grid;}
-            #emi{grid-column: span 2;grid-row:4;}
-            h5{grid-column: span 2;grid-row:5;}
-            
-            #emiinput{
-                display:flex;                 
-            }
-            #emiinput .w-25{
-                margin-left: 3rem;
-            }
-            #container{
-               margin: 10px 0px 10px 50px;
-               border:2px solid black;
-               width:fit-content;
-               height: fit-content;
-            }
-            .border{
-                height: 30px;
-                width: 50px;
-            }
-            #red{
-                background-color: red;
-            }
-            #blue{
-                background-color: blue;
-            }
-            #green{
-                background-color: green;
-            }
-            @media screen and (max-width:450px){
-                #greeting> div{transform: scale(0.9); justify-content: flex-start;}
-                #date,#icon,#salute,#time{transform: scale(0.9);}
-                #emiinput{margin-left: -15px;}
-                #emiinput div{transform: scale(0.9); }
-            }
-            @media screen and (orientation:portrait){
-                body{display: grid;grid-template-columns:1fr;}
-                #greeting{grid-column: 1;grid-row: 1; width: max-content;}
-                #cascade{grid-column: 1; grid-row: 2;}
-                #dynimg{grid-column: 1; grid-row: 3; width: fit-content;}
-                #mouseevent{grid-column:1;grid-row:4;} 
-                #titlecase{grid-column: 1;grid-row: 5;}
-                #emi{grid-column:1;grid-row:6;}
-                h5{grid-column: 1;grid-row: 7;}          
-            }
-        </style>
-    </head>
-    <body class="container-fluid"> 
 
-        <div class="btn-toolbar  bg-dark text-white  rounded-3 p-1 mt-1" id="greeting" style="height:35px;">
-            <div class="btn-group">
-                <div id="time"></div>
-            </div>
-            <div class="btn-group">
-                <div>
-                    <span id="icon"></span>
-                    <span id="salute"></span>
-                </div>
-            </div>
-            <div class="btn-group">
-                <div id="date"></div>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=0.7">
+    <title>Few More</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../assets/js/fewmore.js"></script>
+    <style type="text/css">
+        fieldset {
+            box-shadow: -2px -2px 2px gray;
+            margin-top: 2rem;
+            padding-left: 0.3em;
+            max-width: auto;
+        }
+
+        legend {
+            background-color: rgb(234, 241, 241);
+            box-shadow: 2px 2px 2px gray;
+            border-radius: 0.5em;
+            margin: 0.3em 0 0.4em 0;
+        }
+
+        body {
+            display: grid;
+            gap: 0.2em;
+            grid-template-columns: repeat(2, 6fr);
+        }
+
+        #greeting {
+            grid-column: span 2;
+            grid-row: 1;
+            justify-content: space-between;
+        }
+
+        #cascade {
+            grid-column: 1;
+            grid-row: 2;
+        }
+
+        #dynimg {
+            grid-column: 2;
+            grid-row: 2;
+            width: fit-content;
+            height: 280px;
+            margin: 2rem 0 0 0.8em;
+        }
+
+        #mouseevent {
+            grid-column: 1;
+            grid-row: 3;
+            margin-top: 2rem
+        }
+
+        #titlecase {
+            display: grid;
+        }
+
+        #emi {
+            grid-column: span 2;
+            grid-row: 4;
+        }
+
+        h5 {
+            grid-column: span 2;
+            grid-row: 5;
+        }
+
+        #emiinput {
+            display: flex;
+        }
+
+        #emiinput .w-25 {
+            margin-left: 3rem;
+        }
+
+        #container {
+            margin: 10px 0px 10px 50px;
+            border: 2px solid black;
+            width: fit-content;
+            height: fit-content;
+        }
+
+        .border {
+            height: 30px;
+            width: 50px;
+        }
+
+        #red {
+            background-color: red;
+        }
+
+        #blue {
+            background-color: blue;
+        }
+
+        #green {
+            background-color: green;
+        }
+
+        @media screen and (max-width:450px) {
+            #greeting>div {
+                transform: scale(0.9);
+                justify-content: flex-start;
+            }
+
+            #date,
+            #icon,
+            #salute,
+            #time {
+                transform: scale(0.9);
+            }
+
+            #emiinput {
+                margin-left: -15px;
+            }
+
+            #emiinput div {
+                transform: scale(0.9);
+            }
+        }
+
+        @media screen and (orientation:portrait) {
+            body {
+                display: grid;
+                grid-template-columns: 1fr;
+            }
+
+            #greeting {
+                grid-column: 1;
+                grid-row: 1;
+                width: max-content;
+            }
+
+            #cascade {
+                grid-column: 1;
+                grid-row: 2;
+            }
+
+            #dynimg {
+                grid-column: 1;
+                grid-row: 3;
+                width: fit-content;
+            }
+
+            #mouseevent {
+                grid-column: 1;
+                grid-row: 4;
+            }
+
+            #titlecase {
+                grid-column: 1;
+                grid-row: 5;
+            }
+
+            #emi {
+                grid-column: 1;
+                grid-row: 6;
+            }
+
+            h5 {
+                grid-column: 1;
+                grid-row: 7;
+            }
+        }
+    </style>
+</head>
+
+<body class="container-fluid">
+
+    <div class="btn-toolbar  bg-dark text-white  rounded-3 p-1 mt-1" id="greeting" style="height:35px;">
+        <div class="btn-group">
+            <div id="time"></div>
+        </div>
+        <div class="btn-group">
+            <div>
+                <span id="icon"></span>
+                <span id="salute"></span>
             </div>
         </div>
-        
-        <fieldset  id="cascade">
-            <legend>Cascading Dropdown</legend>
-            <div class="d-flex flex-wrap">
-                <div>
-                    <div class=" btn-toolbar justify-content-lg-start bg-light rounded-2">
-                        <div class="btn-group">
-                            <select id="dropdown1" class="mt-1 mb-1 form-control w-auto bg-dark text-white"></select>
-                        </div>
-                        <div class="btn-group ">
-                            <select id="dropdown2" class="mt-1 mb-1 form-control w-auto bg-dark text-white"></select>
-                        </div>
-                        <div class="btn-group">
-                            <select id="dropdown3" class="mt-1 mb-1 form-control w-auto bg-dark text-white"></select>
-                        </div>
-                    </div> 
-                </div>
-                
-            </div>           
-        </fieldset>
-        <img id="dynimg" title="dynamic iamges from Cascading Dropdown">
-        
-        <div class="col" id="mouseevent">
-            <h4 class="row ms-5 mt-2">Mouse Event</h4>
-            <div id="container" class="d-flex row-1" onmouseout="emptyText()">
-                <div class="border border-1" id="red" value="red" onmouseover="redColor()" ></div>
-                <div class="border border-1" id="blue" value="blue" onmouseover="blueColor()"></div>
-                <div class="border border-1" id="green" value="green" onmouseover="greenColor()" ></div>
-            </div>
-            <h4 id="msg" class="row-2" style="margin-left:80px;"></h4>
+        <div class="btn-group">
+            <div id="date"></div>
         </div>
-          
-        <fieldset id="titlecase">
-            <legend>Title Case </legend>
-            <div class="d-flex flex-wrap">
-                <input class="form-control w-50" placeholder="Enter Your Text" type="textarea" id="Txt">
-                <div id="TitleCase-Para" class="ms-1"></div>
-            </div>
-            </fieldset>
+    </div>
 
-        <fieldset id="emi">
-            <legend>Personal Loan  Calculator</legend>
-            <div id="emiinput">
-                <div class="p-1"> 
-                    <div>
-                        <input type="text" id="txtAmount" placeholder="Amount You Need" class="form-control"  required>
+    <fieldset id="cascade">
+        <legend>Cascading Dropdown</legend>
+        <div class="d-flex flex-wrap">
+            <div>
+                <div class=" btn-toolbar justify-content-lg-start bg-light rounded-2">
+                    <div class="btn-group">
+                        <select id="dropdown1" class="mt-1 mb-1 form-control w-auto bg-dark text-white"></select>
                     </div>
-                    <div>
-                        50,000/-<input value="50000"  id="rangeAmount" min="50000" max="1000000" type="range">10,00,000/-
+                    <div class="btn-group ">
+                        <select id="dropdown2" class="mt-1 mb-1 form-control w-auto bg-dark text-white"></select>
                     </div>
-                </div>
-                <div class="p-1">
-                    <div>
-                        <input type="text" id="txtYear" placeholder="Years" class="form-control" required>
-                        </div>
-                    <div>
-                        3 <input value="3" id="rangeYear" min="3" max="6" type="range">6
-                    </div>
-                </div>
-                <div class="p-1">
-                    <div>
-                        <input type="text" id="txtRate" placeholder="intreset rate" class="form-control" required>
-                    </div>
-                    <div >
-                        8%<input value="8"  id="rangeRate" min="8" max="16" step="0.1" type="range">16%
+                    <div class="btn-group">
+                        <select id="dropdown3" class="mt-1 mb-1 form-control w-auto bg-dark text-white"></select>
                     </div>
                 </div>
             </div>
 
-            <div class="d-flex justify-content-center mt-3 ">
+        </div>
+    </fieldset>
+    <img id="dynimg" title="dynamic iamges from Cascading Dropdown">
+
+    <div class="col" id="mouseevent">
+        <h4 class="row ms-5 mt-2">Mouse Event</h4>
+        <div id="container" class="d-flex row-1" onmouseout="emptyText()">
+            <div class="border border-1" id="red" value="red" onmouseover="redColor()"></div>
+            <div class="border border-1" id="blue" value="blue" onmouseover="blueColor()"></div>
+            <div class="border border-1" id="green" value="green" onmouseover="greenColor()"></div>
+        </div>
+        <h4 id="msg" class="row-2" style="margin-left:80px;"></h4>
+    </div>
+
+    <fieldset id="titlecase">
+        <legend>Title Case </legend>
+        <div class="d-flex flex-wrap">
+            <input class="form-control w-50" placeholder="Enter Your Text" type="textarea" id="Txt">
+            <div id="TitleCase-Para" class="ms-1"></div>
+        </div>
+    </fieldset>
+
+    <fieldset id="emi">
+        <legend>Personal Loan EMI Calculator</legend>
+        <div id="emiinput">
+            <div class="p-1">
                 <div>
-                    <button id="CalculateEmi" class="btn btn-primary">Calculate</button>
+                    <input type="text" id="txtAmount" placeholder="Amount You Need" class="form-control" required>
                 </div>
-                <div class="ms-2">
-                    <h3 id="result" ></h3>
+                <div>
+                    50,000/-<input value="50000" id="rangeAmount" min="50000" max="1000000" type="range">10,00,000/-
                 </div>
             </div>
-        </fieldset>
+            <div class="p-1">
+                <div>
+                    <input type="text" id="txtYear" placeholder="Years" class="form-control" required>
+                </div>
+                <div>
+                    3 <input value="3" id="rangeYear" min="3" max="6" type="range">6
+                </div>
+            </div>
+            <div class="p-1">
+                <div>
+                    <input type="text" id="txtRate" placeholder="intreset rate" class="form-control" required>
+                </div>
+                <div>
+                    8%<input value="8" id="rangeRate" min="8" max="16" step="0.1" type="range">16%
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-center mt-3 ">
+            <div>
+                <button id="CalculateEmi" class="btn btn-primary">Calculate</button>
+            </div>
+            <div class="ms-2">
+                <h3 id="result"></h3>
+            </div>
+        </div>
+    </fieldset>
 
 
 
-        <h5 class="text-center mt-5"><a href="../index.html"> Back to Home</a></h5>
-    </body>
+    <h5 class="text-center mt-5"><a href="../index.html"> Back to Home</a></h5>
+</body>
+
 </html>
